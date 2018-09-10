@@ -1735,7 +1735,6 @@
 			var basequery = $( solarsystemsearch.context ).data('ssswp-query');
 			var which = $( solarsystemsearch.context ).data('ssswp-which');
 			var target = solarsystemsearch.targets[which];
-			var query = $('#ssswp-query').text();
 
 			// Show the Search Page
 			this.showForm( solarsystemsearch.context , false , true );
@@ -1748,9 +1747,9 @@
 			if ( which === 'mpcorb' ) {
 				
 				$( solarsystemsearch.context ).on( "change" , "#ssswp-num" , solarsystemsearch.doRegenerate );
-				$( solarsystemsearch.context ).on( "change" , "#ssswp-coords" , solarsystemsearch.doRegenerate );
+				$( solarsystemsearch.context ).on( "change" , "#ssswp-coord" , solarsystemsearch.doRegenerate );
 			}
-			$( solarsystemsearch.context ).on( "click" , "#ssswp-submit" , { query: query , target:target , which:which } , solarsystemsearch.doSubmit );
+			$( solarsystemsearch.context ).on( "click" , "#ssswp-submit" , { target:target , which:which } , solarsystemsearch.doSubmit );
 			//$( solarsystemsearch.context ).on( "click" , "#ssswp-reset" , solarsystemsearch.doReset );
 			//$( solarsystemsearch.context ).on( "click" , "#ssswp-syntax" , solarsystemsearch.doSyntax );
 			
@@ -1765,8 +1764,7 @@
 			if (SSSWPDEBUG) { console.log('doSubmit'); }
 			
 			//if (SSSWPDEBUG) { console.log( e.data ); }
-			
-			var query = e.data.query;
+			var query = e.data.target.data["Query"];
 			var target = e.data.target;
 			var which = e.data.which;
 			
@@ -1804,6 +1802,11 @@
 		**/
 		doRegenerate: function( e ) {
 			if (SSSWPDEBUG) { console.log('doRegenerate'); }
+			var coord = $( '#ssswp-coord' , solarsystemsearch.context ).prop('value');
+			var num = $( '#ssswp-num' ,  solarsystemsearch.context ).prop('value');
+			var newQuery = "select top " + num + " name, " + coord + " from mpcorb";
+			document.getElementById("ssswp-query").innerHTML = newQuery;
+			solarsystemsearch.targets.mpcorb.data["Query"] = newQuery;
 		},
 		
 		/**
