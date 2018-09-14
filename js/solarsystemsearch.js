@@ -1735,6 +1735,9 @@
 			var basequery = $( solarsystemsearch.context ).data('ssswp-query');
 			var which = $( solarsystemsearch.context ).data('ssswp-which');
 			var target = solarsystemsearch.targets[which];
+			
+			//initialize query to be default text
+			target.data["Query"] = $('#ssswp-query').text();
 
 			// Show the Search Page
 			this.showForm( solarsystemsearch.context , false , true );
