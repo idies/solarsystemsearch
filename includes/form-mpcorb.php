@@ -1,11 +1,4 @@
 <form id="ssswp-form">
-<input type="hidden" name="searchtool" value="SQL">
-<input type="hidden" name="TaskName" value="SolarSystemSearch">
-<input type="hidden" name="syntax" value="Syntax">
-<input type="hidden" name="ReturnHtml" value="true">
-<input type="hidden" name="format" value="html">
-<input type="hidden" name="TableName" value="">
-<input type="hidden" name="ssswp-query" value="">
 <div class="form-group">
 Select the first <select name="_num" id="ssswp-num">
   <option value="10" selected>10</option>
