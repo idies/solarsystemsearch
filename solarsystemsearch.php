@@ -4,8 +4,8 @@ Plugin Name: SolarSystemSearch Core Plugin
 Plugin URI: http://www.voyages.sdss.org
 Description: Query SDSS MSSQL DB
 Version: 1.0.0
-Author: Bonnie Souter
-Author URI: https://github.com/bonbons0220
+Author: Bonnie Souter and William Harrington
+Author URI: https://github.com/bonbons0220 https://github.com/wharrington12
 License: MIT
 */
 
