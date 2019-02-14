@@ -18,4 +18,5 @@ Return asteroid coordinates as <select name="_coords" id="ssswp-coord">
 </div>
 <textarea id="ssswp-query" name="cmd" class="ssswp-query" rows=4 cols=80 ssswp-data-query="select top _num name, _coords from mpcorb" disabled >select top 10 name, ra, dec from mpcorb</textarea><br>
 <button id="ssswp-submit" name="ssswp-submit" class="ssswp-submit btn btn-success">Submit</button>
+<button id="ssswp-download" name="ssswp-download" class="ssswp-submit btn btn-success">Download</button>
 </form>
